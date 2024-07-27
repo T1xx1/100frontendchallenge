@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import Base from "~/layouts/base.astro";
+
+import github from "~/assets/github.svg";
+
+const componentsCollection = await getCollection("components");
+---
+
+<Base styles="p-5 pt-16 flex flex-col space-y-10">
+   <div class="flex flex-col gap-5 items-center">
+      <h1 class="text-primary text-6xl md:text-7xl text-center font-semibold">
+         100 frontend challenge
+      </h1>
+
+      <a
+         href="https://github.com/T1xx1/100frontendchallenge"
+         class="border-2 hover:border-gray-300 rounded-lg p-2 flex gap-2 items-center"
+      >
+         <Image src={github} alt="GitHub" class="h-6 w-6" />
+
+         <div>View on GitHub</div>
+      </a>
+   </div>
+
+   <div class="flex flex-col items-center">
+      <div>Challenges {componentsCollection.length} / 100</div>
+
+      <meter
+         max="100"
+         value={componentsCollection.length}
+         class="h-12 w-[25rem]"></meter>
+   </div>
+
+   <main class="flex flex-wrap gap-10 justify-center">
+   </main>
+
+   <style>
+      meter::-webkit-meter-optimum-value {
+         @apply bg-accent;
+      }
+   </style>
+</Base>
