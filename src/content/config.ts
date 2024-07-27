@@ -1,11 +1,10 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+
+import { schema as componentSchema } from './components/schema';
 
 const componentsCollection = defineCollection({
    type: 'data',
-   schema: z.object({
-      title: z.string(),
-      inspo: z.string()
-   })
+   schema: componentSchema
 });
 
 export const collections = {
