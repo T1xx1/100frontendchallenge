@@ -27,6 +27,26 @@ const componentsCollection = await getCollection("components");
    </div>
 
    <main class="flex flex-wrap gap-10 justify-center">
+      {
+         componentsCollection.map(async (componentEntry) => {
+            const Component = (
+               await import(`../components/${componentEntry.id}/index.astro`)
+            ).default;
+
+            return (
+               <a
+                  href={`./${componentEntry.id}`}
+                  class="border hover:border-gray-300 rounded-xl pt-2 h-96 w-80 flex flex-col gap-5 items-center shadow"
+               >
+                  <div class="text-xl text-center">{componentEntry.data.title}</div>
+                  
+                  <div>
+                     <Component />
+                  </div>
+               </a>
+            );
+         })
+      }
    </main>
 
    <style>
