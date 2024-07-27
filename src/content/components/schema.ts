@@ -1,6 +1,6 @@
 import { z } from 'astro:content';
 
-export type Component = {
+export type Type = {
    title: string;
    inspo: string;
 };
