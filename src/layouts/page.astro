@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+import Base from "./base.astro";
+
+import Github from "~/components/github.astro";
+
+import house from "~/assets/house.svg";
+---
+
+<Base>
+   <header class="flex justify-between">
+      <div class="flex gap-1 items-center">
+         <Image src={house} alt="Home" class="h-8 w-8" />
+
+         <a href="/" class="text-primary text-3xl font-semibold"
+            >100 frontend challenge</a
+         >
+      </div>
+
+      <Github />
+   </header>
+
+   <slot />
+</Base>
