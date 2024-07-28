@@ -5,7 +5,7 @@ import Base from "~/layouts/base.astro";
 
 import Github from "~/components/github.astro";
 
-const componentsCollection = await getCollection("components");
+const componentsCollection = await getCollection("data");
 ---
 
 <Base styles="pt-16 flex flex-col space-y-10">
@@ -30,7 +30,9 @@ const componentsCollection = await getCollection("components");
       {
          componentsCollection.map(async (componentEntry) => {
             const Component = (
-               await import(`../components/${componentEntry.id}/index.astro`)
+               await import(
+                  `../content/components/${componentEntry.id}/index.astro`
+               )
             ).default;
 
             return (
@@ -38,8 +40,10 @@ const componentsCollection = await getCollection("components");
                   href={`./${componentEntry.id}`}
                   class="border hover:border-gray-300 rounded-xl pt-2 h-96 w-80 flex flex-col gap-5 items-center shadow"
                >
-                  <div class="text-xl text-center">{componentEntry.data.title}</div>
-                  
+                  <div class="text-xl text-center">
+                     {componentEntry.data.title}
+                  </div>
+
                   <div>
                      <Component />
                   </div>

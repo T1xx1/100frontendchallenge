@@ -3,12 +3,12 @@ import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import type { Type as ComponentType } from "~/content/components/schema";
+import type { Type as ComponentType } from "~/content/data/schema";
 
 import Page from "~/layouts/page.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-   const componentsCollection = await getCollection("components");
+   const componentsCollection = await getCollection("data");
 
    return componentsCollection.map((componentEntry) => ({
       params: {
@@ -28,7 +28,8 @@ type Props = {
 
 const { id, component } = Astro.props;
 
-const Component = (await import(`../components/${id}/index.astro`)).default;
+const Component = (await import(`../content/components/${id}/index.astro`))
+   .default;
 ---
 
 <Page>
@@ -46,7 +47,9 @@ const Component = (await import(`../components/${id}/index.astro`)).default;
          />
       </div>
 
-      <div class="rounded-xl w-full md:w-1/2 flex flex-col gap-3 items-center justify-center">
+      <div
+         class="rounded-xl w-full md:w-1/2 flex flex-col gap-3 items-center justify-center"
+      >
          <div class="text-lg">My component</div>
 
          <Component />

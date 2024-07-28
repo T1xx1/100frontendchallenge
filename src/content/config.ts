@@ -1,6 +1,6 @@
 import { defineCollection } from 'astro:content';
 
-import { schema as componentSchema } from './components/schema';
+import { schema as componentSchema } from './data/schema';
 
 const componentsCollection = defineCollection({
    type: 'data',
@@ -8,5 +8,5 @@ const componentsCollection = defineCollection({
 });
 
 export const collections = {
-   components: componentsCollection
+   data: componentsCollection
 };
