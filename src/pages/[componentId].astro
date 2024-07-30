@@ -3,9 +3,12 @@ import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import type { Type as ComponentType } from "~/content/data/schema";
-
 import Base from "~/layouts/base.astro";
+
+import dev from "~/assets/dev.svg";
+import github from "~/assets/github.svg";
+
+import type { Component as ComponentType } from "~/content/config";
 
 export const getStaticPaths: GetStaticPaths = async () => {
    const componentsCollection = await getCollection("data");
@@ -32,8 +35,18 @@ const Component = (await import(`../content/components/${id}/index.astro`))
    .default;
 ---
 
-<Base>
-   <h1 class="h1">{component.title}</h1>
+<Base styles="space-y-2">
+   <div class="flex gap-3 items-baseline">
+      <h1 class="h1">{component.title}</h1>
+
+      <a href={component.article}>
+         <Image src={dev} alt="Dev.to" class="h-7 w-7" />
+      </a>
+
+      <a href={component.code}>
+         <Image src={github} alt="Dev.to" class="h-7 w-7" />
+      </a>
+   </div>
 
    <div class="flex flex-col md:flex-row gap-5 items-start">
       <div class="w-full md:w-1/2 space-y-5">
