@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 import type { Type as ComponentType } from "~/content/data/schema";
 
-import Page from "~/layouts/page.astro";
+import Base from "~/layouts/base.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
    const componentsCollection = await getCollection("data");
@@ -32,7 +32,7 @@ const Component = (await import(`../content/components/${id}/index.astro`))
    .default;
 ---
 
-<Page>
+<Base>
    <h2 class="text-5xl font-semibold">{component.title}</h2>
 
    <div class="flex flex-col md:flex-row gap-5 items-start">
@@ -55,4 +55,4 @@ const Component = (await import(`../content/components/${id}/index.astro`))
          <Component />
       </div>
    </div>
-</Page>
+</Base>

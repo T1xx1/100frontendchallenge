@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
+import github from "~/assets/github.svg";
+import house from "~/assets/house.svg";
+
 type Props = {
    styles?: string;
 };
@@ -17,7 +22,32 @@ const { styles } = Astro.props;
       <title>100FrontendChallenge</title>
    </head>
 
-   <body class=`p-5 ${styles}`>
-      <slot />
+   <body class="p-5 space-y-5">
+      <header class="flex items-center justify-between">
+         <a href="/" class="flex gap-1 items-center">
+            <Image src={house} alt="Home" class="h-8 w-8" />
+
+            <div class="text-primary text-3xl font-semibold">
+               100FrontendChallenge
+            </div>
+         </a>
+
+         <div class="flex gap-3 items-center">
+            <a href="https://dev.to/t1xx1/series/28235">Dev.to articles</a>
+
+            <a
+               href="https://github.com/T1xx1/100frontendchallenge"
+               class="border-2 hover:border-gray-300 rounded-lg p-2 flex gap-2 items-center"
+            >
+               <Image src={github} alt="GitHub" class="h-6 w-6" />
+
+               <div>View on GitHub</div>
+            </a>
+         </div>
+      </header>
+
+      <main class={styles}>
+         <slot />
+      </main>
    </body>
 </html>
