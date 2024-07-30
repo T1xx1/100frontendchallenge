@@ -1,13 +1,23 @@
+---
+type Props = {
+   styles?: string;
+};
+
+const { styles } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title>100 frontend challenge</title>
+      <meta name="generator" content={Astro.generator} />
+
+      <title>100FrontendChallenge</title>
    </head>
 
-   <body>
+   <body class=`p-5 ${styles}`>
       <slot />
    </body>
 </html>

@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+
+import github from "~/assets/github.svg";
+---
+
+<a
+   href="https://github.com/T1xx1/100frontendchallenge"
+   class="border-2 hover:border-gray-300 rounded-lg p-2 flex gap-2 items-center"
+>
+   <Image src={github} alt="GitHub" class="h-6 w-6" />
+
+   <div>View on GitHub</div>
+</a>
