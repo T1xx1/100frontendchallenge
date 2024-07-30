@@ -33,11 +33,11 @@ const Component = (await import(`../content/components/${id}/index.astro`))
 ---
 
 <Base>
-   <h2 class="text-5xl font-semibold">{component.title}</h2>
+   <h1 class="h1">{component.title}</h1>
 
    <div class="flex flex-col md:flex-row gap-5 items-start">
-      <div class="w-full md:w-1/2 flex flex-col gap-3 items-center">
-         <div class="text-lg">Inspo</div>
+      <div class="w-full md:w-1/2 space-y-5">
+         <h2 class="h2 text-center">Inspo</h2>
 
          <Image
             src={component.inspo}
@@ -47,12 +47,14 @@ const Component = (await import(`../content/components/${id}/index.astro`))
          />
       </div>
 
-      <div
-         class="rounded-xl w-full md:w-1/2 flex flex-col gap-3 items-center justify-center"
-      >
-         <div class="text-lg">My component</div>
+      <div class="w-full md:w-1/2 space-y-5">
+         <h2 class="h2 text-center">My component</h2>
 
-         <Component />
+         <div
+            class="h-full w-full flex flex-col gap-5 items-center justify-center"
+         >
+            <Component />
+         </div>
       </div>
    </div>
 </Base>
