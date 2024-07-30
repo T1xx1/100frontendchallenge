@@ -1,4 +1,12 @@
 ---
+import { Image } from "astro:assets";
+
+import "~/styles/index.scss";
+
+import dev from "~/assets/dev.svg";
+import github from "~/assets/github.svg";
+import house from "~/assets/house.svg";
+
 type Props = {
    styles?: string;
 };
@@ -17,7 +25,49 @@ const { styles } = Astro.props;
       <title>100FrontendChallenge</title>
    </head>
 
-   <body class=`p-5 ${styles}`>
-      <slot />
+   <body class="space-y-5">
+      <header
+         class="card sticky top-0 left-0 bg-white rounded-t-none p-5 flex items-center justify-between"
+      >
+         <a href="/" class="flex gap-1 items-center">
+            <Image src={house} alt="Home" class="h-8 w-8" />
+
+            <div class="text-primary text-3xl font-semibold">
+               100FrontendChallenge
+            </div>
+         </a>
+
+         <div class="flex gap-3 items-center">
+            <a
+               href="https://dev.to/t1xx1/series/28235"
+               class="btn flex gap-2 items-center"
+            >
+               <Image src={dev} alt="DEV.to" class="h-6 w-6" />
+               <div>Dev.to articles</div></a
+            >
+
+            <a
+               href="https://github.com/T1xx1/100frontendchallenge"
+               class="btn p-2 flex gap-2 items-center"
+            >
+               <Image src={github} alt="GitHub" class="h-6 w-6" />
+
+               <div>View on GitHub</div>
+            </a>
+
+            <a href="https://t1xx1.vercel.app">
+               <Image
+                  src="https://avatars.githubusercontent.com/u/69322987"
+                  alt="Profile"
+                  inferSize
+                  class="rounded-full h-10 w-10"
+               />
+            </a>
+         </div>
+      </header>
+
+      <main class=`px-5 py-8 ${styles}`>
+         <slot />
+      </main>
    </body>
 </html>

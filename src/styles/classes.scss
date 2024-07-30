@@ -1,0 +1,32 @@
+@layer base {
+   .b {
+      @apply border-2;
+   }
+}
+
+@layer components {
+   .btn {
+      @apply b hover:border-gray-300 rounded-lg p-2 shadow;
+   }
+
+   .card {
+      @apply b rounded-xl shadow;
+   }
+   .card-btn {
+      @apply card hover:border-gray-300
+   }
+
+   .h1 {
+      @apply text-5xl font-semibold;
+   }
+   .h2 {
+      @apply text-3xl font-semibold;
+   }
+   .h3 {
+      @apply text-xl font-semibold;
+   }
+
+   .link {
+      @apply text-primary hover:underline;
+   }
+}
