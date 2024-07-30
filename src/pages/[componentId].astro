@@ -3,8 +3,6 @@ import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import type { Type as ComponentType } from "~/content/data/schema";
-
 import Base from "~/layouts/base.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
