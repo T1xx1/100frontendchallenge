@@ -35,10 +35,10 @@ const Component = (await import(`../content/components/${id}/index.astro`))
    .default;
 ---
 
-<Base styles="space-y-2">
-   <div class="flex gap-3 items-baseline">
-      <h1 class="h1">{component.title}</h1>
+<Base styles="space-y-3">
+   <h1 class="h1 text-center">{component.title}</h1>
 
+   <div class="flex gap-2 justify-center">
       <a href={component.article}>
          <Image src={dev} alt="Dev.to" class="h-7 w-7" />
       </a>
@@ -52,16 +52,18 @@ const Component = (await import(`../content/components/${id}/index.astro`))
       <div class="w-full md:w-1/2 space-y-5">
          <h2 class="h2 text-center">Inspo</h2>
 
-         <Image
-            src={component.inspo}
-            alt="Inspo"
-            inferSize={true}
-            class="rounded-xl"
-         />
+         <div>
+            <Image
+               src={component.inspo}
+               alt="Inspo"
+               inferSize={true}
+               class="rounded-xl"
+            />
+         </div>
       </div>
 
       <div class="w-full md:w-1/2 space-y-5">
-         <h2 class="h2 text-center">My component</h2>
+         <h2 class="h2 text-center">My UI</h2>
 
          <div
             class="h-full w-full flex flex-col gap-5 items-center justify-center"
