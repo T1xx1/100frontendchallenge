@@ -4,13 +4,8 @@ export default {
    theme: {
       extend: {
          colors: {
-            orange: '#ff8000',
-            blue: '#00f',
-
-            /*  */
-
-            primary: '#00f', /* orange */
-            accent: '#ff8000'     /* blue */
+            primary: '#0000ff',  /* orange */
+            accent: '#ff8000'    /* blue */
          }
       },
    },
