@@ -6,7 +6,7 @@ import Base from "~/layouts/base.astro";
 const componentsCollection = await getCollection("data");
 ---
 
-<Base styles="flex flex-col space-y-5">
+<Base styles="pt-10 flex flex-col space-y-5">
    <h1 class="text-primary text-6xl md:text-7xl text-center font-semibold">
       100FrontendChallenge
    </h1>
@@ -30,7 +30,7 @@ const componentsCollection = await getCollection("data");
             class="h-10 w-[25rem]"></meter>
       </div>
 
-      <div class="flex flex-wrap gap-10 justify-center">
+      <div class="flex flex-wrap gap-5 justify-center">
          {
             componentsCollection.map(async (componentEntry) => {
                const Component = (
@@ -42,13 +42,11 @@ const componentsCollection = await getCollection("data");
                return (
                   <a
                      href={`./${componentEntry.id}`}
-                     class="card-btn p-3 h-96 w-80 flex flex-col items-center"
+                     class="card-btn p-2 w-full md:w-[49%] space-y-3"
                   >
-                     <div class="text-xl text-center">
-                        {componentEntry.data.title}
-                     </div>
+                     <h3 class="h3 text-center">{componentEntry.data.title}</h3>
 
-                     <div class="relative top-[-3rem] scale-75">
+                     <div class="flex justify-center">
                         <Component />
                      </div>
                   </a>
