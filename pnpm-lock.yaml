@@ -32,6 +32,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.7
         version: 3.4.7
+      tslib:
+        specifier: ^2.6.3
+        version: 2.6.3
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
