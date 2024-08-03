@@ -18,7 +18,7 @@ const componentsCollection = await getCollection("data");
       >
    </div>
 
-   <div class="space-y-5">
+   <div class="space-y-4">
       <h2 class="h2 text-center">Challenges</h2>
 
       <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
@@ -30,7 +30,7 @@ const componentsCollection = await getCollection("data");
             class="h-10 w-[25rem]"></meter>
       </div>
 
-      <div class="flex flex-wrap gap-5 justify-center">
+      <div class="flex flex-wrap gap-4 justify-center">
          {
             componentsCollection.map(async (componentEntry) => {
                const Component = (
@@ -42,7 +42,7 @@ const componentsCollection = await getCollection("data");
                return (
                   <a
                      href={`./${componentEntry.id}`}
-                     class="card-btn p-3 pt-4 w-full md:w-[49%] space-y-5"
+                     class="card-btn pt-4 w-full md:w-[49%] space-y-4"
                   >
                      <h3 class="h3 text-center">{componentEntry.data.title}</h3>
 
