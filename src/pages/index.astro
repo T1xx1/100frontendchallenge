@@ -42,13 +42,11 @@ const componentsCollection = await getCollection("data");
                return (
                   <a
                      href={`./${componentEntry.id}`}
-                     class="card-btn pt-4 w-full md:w-[49%] space-y-4"
+                     class="card-btn pt-4 w-full md:w-[49%] space-y-3"
                   >
                      <h3 class="h3 text-center">{componentEntry.data.title}</h3>
 
-                     <div class="flex justify-center">
-                        <Component />
-                     </div>
+                     <Component />
                   </a>
                );
             })

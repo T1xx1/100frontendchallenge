@@ -23,6 +23,8 @@ const { styles } = Astro.props;
       <meta name="generator" content={Astro.generator} />
 
       <title>100FrontendChallenge</title>
+
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
    </head>
 
    <body>
@@ -66,7 +68,7 @@ const { styles } = Astro.props;
          </div>
       </header>
 
-      <main class=`px-3 py-10 ${styles}`>
+      <main class=`px-3 py-7 ${styles}`>
          <slot />
       </main>
    </body>
