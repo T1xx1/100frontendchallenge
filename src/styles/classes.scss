@@ -1,16 +1,6 @@
-@layer base {
-   .b {
-      @apply border-2;
-   }
-}
-
 @layer components {
-   .btn {
-      @apply b hover:border-gray-300 rounded-lg p-2 shadow;
-   }
-
    .card {
-      @apply b rounded-xl shadow;
+      @apply border-2 rounded-xl shadow;
    }
    .card-btn {
       @apply card hover:border-gray-300
