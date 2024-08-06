@@ -2,9 +2,6 @@
    .card {
       @apply border-2 rounded-xl shadow;
    }
-   .card-btn {
-      @apply card hover:border-gray-300
-   }
 
    .h2 {
       @apply text-4xl font-semibold;
