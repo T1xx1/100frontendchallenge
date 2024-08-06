@@ -6,10 +6,12 @@ import Base from "~/layouts/base.astro";
 const componentsCollection = await getCollection("data");
 ---
 
-<Base styles="pt-10 flex flex-col space-y-5">
-   <h1 class="text-primary text-6xl md:text-7xl text-center font-semibold">
-      100FrontendChallenge
-   </h1>
+<Base styles="flex flex-col space-y-5">
+   <div class="text-primary text-center">
+      <h1 class="text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
+
+      <div>100 UIs one per day</div>
+   </div>
 
    <div class="text-center">
       <a
