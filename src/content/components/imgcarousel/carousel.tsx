@@ -50,7 +50,7 @@ export default function Carousel() {
 
       <div className='flex gap-3 justify-center'>
          {imgs.map((img, i) => (
-            <button type='button' onClick={() => setIndex(i)}>
+            <button type='button' key={i} onClick={() => setIndex(i)}>
                <img src={img.src} alt='Img' className={`rounded-lg h-16 w-16 object-cover ${i === index && 'outline outline-white'}`} />
             </button>
          ))}

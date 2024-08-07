@@ -14,22 +14,22 @@ type Props = {
 const { styles } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
 
       <meta name="generator" content={Astro.generator} />
 
       <title>100FrontendChallenge</title>
+      <meta name="description" content="100 UIs one per day" />
 
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
    </head>
 
    <body>
       <header
-         class="card sticky top-0 left-0 bg-white rounded-t-none p-5 flex flex-wrap gap-4 items-center justify-center md:justify-between"
+         class="card z-10 sticky top-0 inset-x-0 bg-white rounded-t-none p-4 flex flex-wrap gap-2 items-center justify-center md:justify-between"
       >
          <a href="/" class="flex gap-1 items-center">
             <Image src={house} alt="Home" class="h-8 w-8" />
@@ -39,22 +39,13 @@ const { styles } = Astro.props;
             </div>
          </a>
 
-         <div class="flex gap-3 items-center">
-            <a
-               href="https://dev.to/t1xx1/series/28235"
-               class="btn flex gap-2 items-center"
-            >
-               <Image src={dev} alt="DEV.to" class="h-6 w-6" />
-               <div>Dev.to articles</div></a
-            >
+         <div class="flex gap-2 items-center">
+            <a href="https://dev.to/t1xx1/series/28235">
+               <Image src={dev} alt="DEV.to" class="h-7 w-7" />
+            </a>
 
-            <a
-               href="https://github.com/T1xx1/100frontendchallenge"
-               class="btn p-2 flex gap-2 items-center"
-            >
-               <Image src={github} alt="GitHub" class="h-6 w-6" />
-
-               <div>View on GitHub</div>
+            <a href="https://github.com/T1xx1/100frontendchallenge">
+               <Image src={github} alt="GitHub" class="h-7 w-7" />
             </a>
 
             <a href="https://t1xx1.vercel.app">
@@ -62,7 +53,7 @@ const { styles } = Astro.props;
                   src="https://avatars.githubusercontent.com/u/69322987"
                   alt="Profile"
                   inferSize
-                  class="rounded-full h-10 w-10"
+                  class="rounded-full h-8 w-8"
                />
             </a>
          </div>

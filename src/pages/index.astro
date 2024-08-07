@@ -6,10 +6,12 @@ import Base from "~/layouts/base.astro";
 const componentsCollection = await getCollection("data");
 ---
 
-<Base styles="pt-10 flex flex-col space-y-5">
-   <h1 class="text-primary text-6xl md:text-7xl text-center font-semibold">
-      100FrontendChallenge
-   </h1>
+<Base styles="flex flex-col space-y-5">
+   <div class="text-primary text-center">
+      <h1 class="text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
+
+      <div>100 UIs one per day</div>
+   </div>
 
    <div class="text-center">
       <a
@@ -18,7 +20,7 @@ const componentsCollection = await getCollection("data");
       >
    </div>
 
-   <div class="space-y-4">
+   <div class="space-y-5">
       <h2 class="h2 text-center">Challenges</h2>
 
       <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
@@ -30,7 +32,7 @@ const componentsCollection = await getCollection("data");
             class="h-10 w-[25rem]"></meter>
       </div>
 
-      <div class="flex flex-wrap gap-4 justify-center">
+      <div class="flex flex-wrap gap-5 justify-center">
          {
             componentsCollection.map(async (componentEntry) => {
                const Component = (
@@ -40,21 +42,22 @@ const componentsCollection = await getCollection("data");
                ).default;
 
                return (
-                  <a
-                     href={`./${componentEntry.id}`}
-                     class="card-btn pt-4 w-full md:w-[49%] space-y-3"
-                  >
-                     <h3 class="h3 text-center">{componentEntry.data.title}</h3>
+                  <div class="card pt-3 w-full md:w-[49%] space-y-3">
+                     <h3 class="h3 text-center">
+                        <a href={`./${componentEntry.id}`} class="link">
+                           {componentEntry.data.title}
+                        </a>
+                     </h3>
 
                      <Component />
-                  </a>
+                  </div>
                );
             })
          }
       </div>
    </div>
 
-   <style>
+   <style lang="scss">
       meter::-webkit-meter-optimum-value {
          @apply bg-accent;
       }
