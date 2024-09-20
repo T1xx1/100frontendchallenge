@@ -10,5 +10,9 @@
    {
       "id": "mobilenavigation",
       "title": "Mobile navigation"
+   },
+   {
+      "id": "contactus",
+      "title": "Contact us"
    }
 ]
