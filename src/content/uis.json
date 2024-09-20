@@ -14,5 +14,9 @@
    {
       "id": "contactus",
       "title": "Contact us"
+   },
+   {
+      "id": "recipe",
+      "title": "Recipe"
    }
 ]
