@@ -1,35 +1,22 @@
 ---
+import uis from "~/content/uis.json";
+
 import Base from "~/layouts/base.astro";
 
-import uis from "~/content/uis.json";
+import Card from '~/components/card.astro';
+import Counter from '~/components/counter.astro';
+import H3 from '~/components/h3.astro';
+import Link from '~/components/link.astro';
+import Title from '~/components/title.astro';
 ---
 
 <Base styles="flex flex-col space-y-5">
-   <div class="text-primary text-center">
-      <h1 class="text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
-
-      <div>100 UIs one per day</div>
-   </div>
-
-   <div class="text-center">
-      <a
-         href="https://dev.to/bigsondev/100-free-frontend-challenges-3f0"
-         class="link">Challenge's inspo</a
-      >
-   </div>
+   <Title />
 
    <div class="space-y-5">
-      <h2 class="h2 text-center">Challenges</h2>
+      <Counter val={uis.length} />
 
-      <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
-         <div class="font-semibold">{uis.length} / 100</div>
-
-         <meter
-            max="100"
-            value={uis.length}
-            class="h-10 w-[25rem]"></meter>
-      </div>
-
+      <!-- uis -->
       <div class="flex flex-wrap gap-5 justify-center">
          {
             uis.map(async (uiEntry) => {
@@ -40,24 +27,16 @@ import uis from "~/content/uis.json";
                ).default;
 
                return (
-                  <div class="card pt-3 w-full md:w-[49%] space-y-3">
-                     <h3 class="h3 text-center">
-                        <a href={`./${uiEntry.id}`} class="link">
-                           {uiEntry.title}
-                        </a>
-                     </h3>
+                  <Card styles="pt-3 w-full md:w-[49%] space-y-3">
+                     <H3 styles="text-center">
+                        <Link url={`./${uiEntry.id}`}>{uiEntry.title}</Link>
+                     </H3>
 
                      <Component />
-                  </div>
+                  </Card>
                );
             })
          }
       </div>
    </div>
-
-   <style lang="scss">
-      meter::-webkit-meter-optimum-value {
-         @apply bg-accent;
-      }
-   </style>
 </Base>

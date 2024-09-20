@@ -1,0 +1,24 @@
+---
+import Card from '~/components/card.astro';
+
+const { val } = Astro.props;
+---
+
+<div class="space-y-5">
+   <h2 class="h2 text-center">Challenges</h2>
+
+   <Card styles="px-3 py-2 m-auto w-fit flex flex-col items-center">
+      <div class="font-semibold">{val} / 100</div>
+
+      <meter
+         max="100"
+         value={val}
+         class="h-10 w-[25rem]"></meter>
+   </Card>
+</div>
+
+<style lang="scss">
+   meter::-webkit-meter-optimum-value {
+      @apply bg-accent;
+   }
+</style>
