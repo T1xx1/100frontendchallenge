@@ -18,5 +18,9 @@
    {
       "id": "recipe",
       "title": "Recipe"
+   },
+   {
+      "id": "imgcarousel",
+      "title": "Image carousel"
    }
 ]
