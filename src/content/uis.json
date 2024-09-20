@@ -26,5 +26,9 @@
    {
       "id": "createaccount",
       "title": "Create account"
+   },
+   {
+      "id": "musicevents",
+      "title": "Music events"
    }
 ]
