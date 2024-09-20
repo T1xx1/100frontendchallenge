@@ -1,0 +1,11 @@
+---
+type Props = {
+   styles?: string;
+};
+
+const { styles } = Astro.props;
+---
+
+<div class={`border-2rounded-xl shadow ${styles}`}>
+   <slot />
+</div>
