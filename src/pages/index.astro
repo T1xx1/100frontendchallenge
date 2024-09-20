@@ -4,6 +4,7 @@ import uis from "~/content/uis.json";
 import Base from "~/layouts/base.astro";
 
 import Counter from '~/components/counter.astro';
+import H3 from '~/components/h3.astro';
 import Link from '~/components/link.astro';
 import Title from '~/components/title.astro';
 ---
@@ -26,9 +27,9 @@ import Title from '~/components/title.astro';
 
                return (
                   <div class="card pt-3 w-full md:w-[49%] space-y-3">
-                     <h3 class="h3 text-center">
+                     <H3 styles="text-center">
                         <Link url={`./${uiEntry.id}`}>{uiEntry.title}</Link>
-                     </h3>
+                     </H3>
 
                      <Component />
                   </div>
