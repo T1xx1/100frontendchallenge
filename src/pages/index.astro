@@ -1,9 +1,7 @@
 ---
-import { getCollection } from "astro:content";
-
 import Base from "~/layouts/base.astro";
 
-const componentsCollection = await getCollection("data");
+import uis from "~/content/uis.json";
 ---
 
 <Base styles="flex flex-col space-y-5">
@@ -24,28 +22,28 @@ const componentsCollection = await getCollection("data");
       <h2 class="h2 text-center">Challenges</h2>
 
       <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
-         <div class="font-semibold">{componentsCollection.length} / 100</div>
+         <div class="font-semibold">{uis.length} / 100</div>
 
          <meter
             max="100"
-            value={componentsCollection.length}
+            value={uis.length}
             class="h-10 w-[25rem]"></meter>
       </div>
 
       <div class="flex flex-wrap gap-5 justify-center">
          {
-            componentsCollection.map(async (componentEntry) => {
+            uis.map(async (uiEntry) => {
                const Component = (
                   await import(
-                     `../content/components/${componentEntry.id}/index.astro`
+                     `./${uiEntry.id}/component.astro`
                   )
                ).default;
 
                return (
                   <div class="card pt-3 w-full md:w-[49%] space-y-3">
                      <h3 class="h3 text-center">
-                        <a href={`./${componentEntry.id}`} class="link">
-                           {componentEntry.data.title}
+                        <a href={`./${uiEntry.id}`} class="link">
+                           {uiEntry.title}
                         </a>
                      </h3>
 

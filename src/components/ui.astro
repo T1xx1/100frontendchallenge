@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+
+import dev from "~/assets/dev.svg"
+import github from "~/assets/github.svg"
+
+import Base from '~/layouts/base.astro';
+
+type Props = {
+   id: string;
+   title: string;
+   article: string;
+};
+
+const { id, title, article } = Astro.props;
+---
+
+<Base styles="space-y-3">
+   <div class="space-y-3">
+      <h2 class="h2 text-center">{title}</h2>
+
+      <div class="flex gap-2 justify-center">
+         <a href={article}>
+            <Image src={dev} alt="Dev.to" class="h-6 w-6" />
+         </a>
+
+         <a
+            href={`https://github.com/T1xx1/100frontendchallenge/tree/main/src/content/components/${id}`}
+         >
+            <Image src={github} alt="GitHub" class="h-6 w-6" />
+         </a>
+      </div>
+   </div>
+
+   <div class="flex flex-col md:flex-row gap-4 items-start">
+      <div class="m-auto w-full md:w-1/2 space-y-3">
+         <h3 class="h3 text-center">My UI</h3>
+
+         <div class="h-full w-full flex justify-center">
+            <slot />
+         </div>
+      </div>
+   </div>
+</Base>
