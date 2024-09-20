@@ -38,5 +38,9 @@
    {
       "id": "signup",
       "title": "Signup"
+   },
+   {
+      "id": "hotelbooking",
+      "title": "Hotel booking"
    }
 ]
