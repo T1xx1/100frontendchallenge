@@ -42,5 +42,9 @@
    {
       "id": "hotelbooking",
       "title": "Hotel booking"
+   },
+   {
+      "id": "restaurantreservation",
+      "title": "Restaurant reservation"
    }
 ]
