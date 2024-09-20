@@ -3,6 +3,7 @@ import uis from "~/content/uis.json";
 
 import Base from "~/layouts/base.astro";
 
+import Counter from '~/components/counter.astro';
 import Title from '~/components/title.astro';
 ---
 
@@ -10,16 +11,7 @@ import Title from '~/components/title.astro';
    <Title />
 
    <div class="space-y-5">
-      <h2 class="h2 text-center">Challenges</h2>
-
-      <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
-         <div class="font-semibold">{uis.length} / 100</div>
-
-         <meter
-            max="100"
-            value={uis.length}
-            class="h-10 w-[25rem]"></meter>
-      </div>
+      <Counter val={uis.length} />
 
       <div class="flex flex-wrap gap-5 justify-center">
          {
@@ -45,10 +37,4 @@ import Title from '~/components/title.astro';
          }
       </div>
    </div>
-
-   <style lang="scss">
-      meter::-webkit-meter-optimum-value {
-         @apply bg-accent;
-      }
-   </style>
 </Base>
