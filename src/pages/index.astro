@@ -2,14 +2,12 @@
 import uis from "~/content/uis.json";
 
 import Base from "~/layouts/base.astro";
+
+import Title from '~/components/title.astro';
 ---
 
 <Base styles="flex flex-col space-y-5">
-   <div class="text-primary text-center">
-      <h1 class="text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
-
-      <div>100 UIs one per day</div>
-   </div>
+   <Title />
 
    <div class="space-y-5">
       <h2 class="h2 text-center">Challenges</h2>
