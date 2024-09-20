@@ -2,5 +2,9 @@
    {
       "id": "profilecard",
       "title": "Profile card"
+   },
+   {
+      "id": "addtocart",
+      "title": "Add to cart"
    }
 ]
