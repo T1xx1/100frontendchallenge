@@ -5,6 +5,7 @@ import Base from "~/layouts/base.astro";
 
 import Card from '~/components/card.astro';
 import Counter from '~/components/counter.astro';
+import H2 from '~/components/h2.astro';
 import H3 from '~/components/h3.astro';
 import Link from '~/components/link.astro';
 import Title from '~/components/title.astro';
@@ -13,8 +14,10 @@ import Title from '~/components/title.astro';
 <Base styles="flex flex-col space-y-5">
    <Title />
 
+   <Counter val={uis.length} />
+
    <div class="space-y-5">
-      <Counter val={uis.length} />
+      <H2 styles="text-center">UIs</H2>
 
       <!-- uis -->
       <div class="flex flex-wrap gap-5 justify-center">
