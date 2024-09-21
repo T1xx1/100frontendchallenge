@@ -53,9 +53,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      sass:
-        specifier: ^1.79.2
-        version: 1.79.2
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -3824,6 +3821,7 @@ snapshots:
   chokidar@4.0.0:
     dependencies:
       readdirp: 4.0.1
+    optional: true
 
   chownr@2.0.0: {}
 
@@ -4234,7 +4232,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  immutable@4.3.7: {}
+  immutable@4.3.7:
+    optional: true
 
   import-meta-resolve@4.1.0: {}
 
@@ -4967,7 +4966,8 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  readdirp@4.0.1: {}
+  readdirp@4.0.1:
+    optional: true
 
   regex@4.3.2: {}
 
@@ -5122,6 +5122,7 @@ snapshots:
       chokidar: 4.0.0
       immutable: 4.3.7
       source-map-js: 1.2.1
+    optional: true
 
   scheduler@0.23.2:
     dependencies:
