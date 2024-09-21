@@ -4,14 +4,14 @@
    "rsc": false,
    "tsx": true,
    "tailwind": {
-      "config": "./src/shadcn/tailwind.congif.js",
+      "config": "./src/components/shadcn/tailwind.congif.js",
       "css": "./src/styles/index.css",
       "baseColor": "slate",
       "cssVariables": false,
       "prefix": ""
    },
    "aliases": {
-      "components": "~/shadcn",
-      "utils": "~/shadcn/utils"
+      "components": "~/components/shadcn",
+      "utils": "~/components/shadcn/utils"
    }
 }

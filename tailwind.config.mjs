@@ -2,7 +2,7 @@
 export default {
    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
    presets: [
-      require('./src/shadcn/tailwind.congif.js')
+      require('./src/components/shadcn/tailwind.congif.js')
    ],
    theme: {
       extend: {

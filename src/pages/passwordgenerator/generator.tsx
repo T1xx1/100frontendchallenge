@@ -1,5 +1,5 @@
-import { Slider } from '~/shadcn/ui/slider';
-import { Switch } from '~/shadcn/ui/switch';
+import { Slider } from '~/components/shadcn/ui/slider';
+import { Switch } from '~/components/shadcn/ui/switch';
 
 import copy from './copy.svg';
 import reload from './reload.svg';
