@@ -5,7 +5,7 @@ import "~/styles/index.css";
 
 import dev from "~/assets/dev.svg";
 import github from "~/assets/github.svg";
-import house from "~/assets/house.svg";
+import icon from "~/assets/icon.png";
 
 type Props = {
    styles?: string;
@@ -32,7 +32,7 @@ const { styles } = Astro.props;
          class="z-10 sticky top-0 inset-x-0 bg-white rounded-t-none p-4 flex gap-2 items-center justify-between"
       >
          <a href="/" class="flex gap-1 items-center">
-            <Image src={house} alt="Home" class="h-8 w-8" />
+            <Image src={icon} alt="Icon" class="h-8 w-8" />
 
             <div class="text-primary text-3xl font-semibold">
                100FrontendChallenge
