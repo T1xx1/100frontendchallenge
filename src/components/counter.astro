@@ -5,18 +5,16 @@ import H2 from './h2.astro';
 const { val } = Astro.props;
 ---
 
-<div class="space-y-5">
-   <H2 styles="text-center">Challenges</H2>
+<Card styles="m-auto px-5 py-2 w-fit flex flex-col items-center">
+   <H2>UIs counter</H2>
 
-   <Card styles="px-3 py-2 m-auto w-fit flex flex-col items-center">
-      <div class="font-semibold">{val} / 100</div>
+   <div class="text-accent font-semibold">{val} / 100</div>
 
-      <meter
-         max="100"
-         value={val}
-         class="h-10 w-[25rem]"></meter>
-   </Card>
-</div>
+   <meter
+      max="100"
+      value={val}
+      class="h-10 w-[25rem]"></meter>
+</Card>
 
 <style>
    meter::-webkit-meter-optimum-value {
