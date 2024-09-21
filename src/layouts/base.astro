@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import "~/styles/index.css";
 
 import dev from "~/assets/dev.svg";
-import github from "~/assets/github.svg";
 import icon from "~/assets/icon.png";
 
 type Props = {
@@ -41,11 +40,11 @@ const { styles } = Astro.props;
 
          <div class="flex gap-2 items-center">
             <a href="https://dev.to/t1xx1/series/28235">
-               <Image src={dev} alt="DEV.to" class="h-7 w-7" />
+               <Image src={dev} alt="DEV.to" class="h-8 w-8" />
             </a>
 
             <a href="https://github.com/T1xx1/100frontendchallenge">
-               <Image src={github} alt="GitHub" class="h-7 w-7" />
+               <img src="https://img.shields.io/github/stars/T1xx1/100frontendchallenge?style=for-the-badge&logo=github&labelColor=000&color=%23eab308" class="rounded">
             </a>
 
             <a href="https://t1xx1.vercel.app">
