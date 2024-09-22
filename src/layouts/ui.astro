@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
+import copy from "~/assets/copy.svg"
 import dev from "~/assets/dev.svg"
 import github from "~/assets/github.svg"
 
@@ -13,34 +14,64 @@ type Props = {
    id: string;
    title: string;
    article: string;
+   color: string;
+   theme: string[];
 };
 
-const { id, title, article } = Astro.props;
+const { id, title, article, color, theme } = Astro.props;
 ---
 
 <Base styles="space-y-3">
-   <div class="space-y-3">
-      <H2 styles="text-center">{title}</H2>
+   <H2 styles={`text-center ${color}`}>{title}</H2>
 
-      <div class="flex gap-2 justify-center">
-         <a href={article}>
-            <Image src={dev} alt="Dev.to" class="h-6 w-6" />
-         </a>
-
-         <a
-            href={`https://github.com/T1xx1/100frontendchallenge/tree/main/src/pages/${id}/component.astro`}
-         >
-            <Image src={github} alt="GitHub" class="h-6 w-6" />
-         </a>
-      </div>
-   </div>
-
-   <div class="flex flex-col md:flex-row gap-4 items-start">
-      <div class="m-auto w-full md:w-1/2 space-y-3">
+   <div class="flex flex-col md:flex-row gap-3">
+      <!-- component -->
+      <div class="h-fit w-full md:w-3/4 space-y-3">
          <H3 styles="text-center">My UI</H3>
 
-         <div class="h-full w-full flex justify-center">
+         <div class="h-full w-full flex items-center justify-center">
             <slot />
+         </div>
+      </div>
+
+      <!-- right -->
+      <div class="w-full md:w-1/3 space-y-7">
+         <!-- info -->
+         <div class="space-y-4">
+            <H3 styles="text-center">Info</H3>
+
+            <div class="flex gap-2 items-center">
+               <a
+                  href={`https://github.com/T1xx1/100frontendchallenge/tree/main/src/pages/${id}/component.astro`}
+                  class="border-2 hover:border-gray-300 rounded-lg w-full flex gap-1 items-center"
+               >
+                  <Image src={github} alt="GitHub" class="p-2 h-10 w-10" />
+      
+                  <div>View code</div>
+               </a>
+      
+               <a
+                  href={article}
+                  class="border-2 hover:border-gray-300 rounded-lg w-full flex gap-1 items-center"
+               >
+                  <Image src={dev} alt="Dev.to" class="p-2 h-10 w-10" />
+      
+                  <div>Read article</div>
+               </a>
+            </div>
+         </div>
+
+         <!-- colors -->
+         <div class="space-y-4">
+            <H3 styles="text-center">Colors palette</H3>
+
+            <div class="flex gap-2.5 justify-center">
+               {theme.map(color => (
+                  <button type="button" class="rounded-lg h-14 w-14 group" style={`background-color: #${color}`}>
+                     <Image src={copy} alt="Copy" class="hidden group-hover:block m-auto h-4 w-4" />
+                  </button>
+               ))}
+            </div>
          </div>
       </div>
    </div>
