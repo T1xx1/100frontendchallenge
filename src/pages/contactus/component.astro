@@ -1,60 +1,60 @@
 <div
-   class="bg rounded-xl px-8 py-14 text-white flex gap-1 justify-between"
+   class="bg rounded-xl p-10 flex gap-5 justify-between"
 >
-   <div class="space-y-3 w-1/2">
-      <div class="text-3xl font-semibold">Contact us</div>
+   <div class="space-y-3 w-1/2 text-white">
+      <div class="text-4xl font-semibold">Contact us</div>
 
-      <div class="text-sm">
+      <div>
          Get in touch with us! Wheter you have questions, feedback, or just want
-         to say hello, we're here for you.
+         to say hello, we're here for you!
       </div>
    </div>
 
-   <form class="bg-white rounded-2xl p-5 pt-4 w-1/2 text-black text-sm space-y-3">
-      <div class="text-lg font-medium">Send us your message</div>
+   <form class="bg-white rounded-3xl p-5 w-1/2 space-y-3">
+      <div class="text-[#ff0080] text-xl font-medium">Send us your message</div>
 
-      <fieldset>
+      <fieldset class="space-y-1">
          <legend class="font-medium">Username</legend>
 
          <input
             type="text"
             placeholder="T1xx1..."
-            class="border-2 rounded-lg px-1.5 py-1 w-full"
+            class="border-2 hover:border-gray-300 rounded-md px-2 py-1 w-full"
          />
       </fieldset>
 
-      <fieldset>
+      <fieldset class="space-y-1">
          <legend class="font-medium">Email</legend>
 
          <input
             type="text"
             placeholder="username@provider.tld..."
-            class="border-2 rounded-lg px-1.5 py-1 w-full"
+            class="border-2 hover:border-gray-300 rounded-md px-2 py-1 w-full"
          />
       </fieldset>
 
-      <fieldset>
+      <fieldset class="space-y-1">
          <legend class="font-medium">Topic</legend>
 
-         <select class="border-2 rounded-lg p-1 w-full cursor-pointer">
-            <option selected class="text-gray-700">Select...</option>
+         <select class="border-2 hover:border-gray-300 rounded-md p-1 w-full cursor-pointer">
+            <option selected>Select...</option>
             <option>Question</option>
             <option>Feedback</option>
             <option>Hi</option>
          </select>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="space-y-1">
          <legend class="font-medium">Message</legend>
 
          <textarea
             placeholder="Hi there..."
-            class="border-2 rounded-lg px-1.5 py-1 h-24 w-full resize-none"></textarea>
+            class="border-2 hover:border-gray-300 rounded-lg px-1.5 py-1 h-24 w-full resize-none"></textarea>
       </fieldset>
 
       <button
          type="button"
-         class="bg-[#ff0080] hover:bg-[#ff3399] rounded-full py-1.5 w-full text-white"
+         class="bg-[#ff0080] hover:bg-opacity-75 rounded-full py-2 w-full text-white"
          >Submit</button
       >
    </form>
