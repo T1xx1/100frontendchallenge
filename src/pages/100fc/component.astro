@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+import icon from '~/assets/icon.png';
+
+import Bg from '~/components/bg.astro';
+import Title from '~/components/title.astro';
+---
+
+<Bg twBgColor="bg-white">
+   <div class="flex gap-2 items-end">
+      <Image src={icon} alt="Icon" class="h-16 w-16" />
+
+      <Title />
+   </div>
+</Bg>
