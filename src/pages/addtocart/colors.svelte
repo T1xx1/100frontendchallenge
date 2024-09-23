@@ -1,11 +1,12 @@
 <script lang="ts">
    const colors = [
-      'bg-[#ff8080]',
-      'bg-[#80ff80]',
-      'bg-[#8080ff]',
-      'bg-[#ffff80]',
-      'bg-[#80ffff]',
-      'bg-[#ff80ff]',
+      'bg-red-500',
+      'bg-green-500',
+      'bg-violet-500',
+      'bg-yellow-500',
+      'bg-blue-500',
+      'bg-pink-500',
+      'bg-gray-400'
    ];
 
    $: selected = colors[0];
@@ -15,14 +16,14 @@
    };
 </script>
 
-<div class="mt-4 space-y-1">
+<div class="mt-4 space-y-2">
    <div class="font-semibold">Choose color</div>
 
-   <div class="flex gap-2 items-center">
+   <div class="flex gap-2.5 items-center">
       {#each colors as color}
          <button
             type="button"
-            class={`rounded h-8 w-8 shadow ${color} ${color === selected && 'outline outline-blue-700'}`}
+            class={`bg-opacity-80 rounded h-8 w-8 ${color} ${color === selected && 'outline outline-blue-700'}`}
             on:click={() => select(color)}
          ></button>
       {/each}

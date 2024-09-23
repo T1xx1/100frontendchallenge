@@ -1,15 +1,13 @@
 <script lang="ts">
-   import type { ImageMetadata } from 'astro';
-
    import shirt1 from './shirt1.jpg';
    import shirt2 from './shirt2.jpg';
    import shirt3 from './shirt3.jpg';
 
-   const shirts = [shirt1, shirt2, shirt3];
+   const shirts = [shirt1.src, shirt2.src, shirt3.src];
 
    $: selected = shirts[0];
 
-   const select = (shirt: ImageMetadata) => {
+   const select = (shirt: string) => {
       selected = shirt;
    };
 </script>
@@ -19,13 +17,13 @@
       {#each shirts as shirt}
          <button type="button" on:click={() => select(shirt)}>
             <img
-               src={shirt.src}
+               src={shirt}
                alt="Shirt"
-               class={`rounded-lg h-16 w-14 object-cover ${shirt === selected && 'outline outline-[3.5px] outline-blue-700'}`}
+               class={`rounded-md h-16 w-14 object-cover ${shirt === selected && 'outline outline-[3.5px] outline-blue-700'}`}
             />
          </button>
       {/each}
    </div>
 
-   <img src={selected.src} alt="Shirt" class="rounded-lg h-96 w-72 object-cover" />
+   <img src={selected} alt="Shirt" class="rounded-lg h-96 w-72 object-cover" />
 </div>

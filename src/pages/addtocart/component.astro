@@ -1,48 +1,51 @@
 ---
+import Bg from '~/components/bg.astro';
 import Colors from "./colors.svelte";
 import Selector from "./selector.svelte";
 import Sizes from "./sizes.svelte";
 ---
 
-<div class="serif bg-gray-100 bg-opacity-50 rounded-xl p-5 flex gap-4 items-start">
-   <Selector client:load />
+<Bg twBgColor="bg-gray-200">
+   <div class="border-[2.5px] rounded-xl p-4 serif flex gap-5 items-start">
+      <Selector client:load />
 
-   <div class="space-y-3">
-      <div>
-         <div class="text-blue-500 text-sm font-semibold">Shirts</div>
+      <div class="space-y-4">
+         <div>
+            <div class="text-blue-500 text-xs font-semibold">Shirts</div>
 
-         <h2 class="text-3xl font-bold">Custom shirt</h2>
+            <h2 class="text-3xl font-bold">Custom shirt</h2>
 
-         <div class="text-gray-500 text-sm">
-            Classic shirts made out of 100% pure cotton.
-         </div>
-      </div>
-
-      <div>
-         <div class="flex gap-2 items-center">
-            <div class="text-2xl font-bold">€20.00</div>
-
-            <div
-               class="bg-blue-300 bg-opacity-70 rounded px-1 py-0.5 w-fit text-blue-700 text-xs font-semibold"
-            >
-               -50%
+            <div class="text-gray-500 text-sm">
+               Classic shirts made out of 100% pure cotton.
             </div>
          </div>
 
-         <div class="text-sm line-through">€40.00</div>
+         <div>
+            <div class="flex gap-3 items-center">
+               <div class="text-2xl font-bold">€ 20.00</div>
+
+               <div
+                  class="bg-blue-200 bg-opacity-70 rounded px-1 py-0.5 w-fit text-blue-700 text-xs font-semibold"
+               >
+                  -50%
+               </div>
+            </div>
+
+            <div class="text-xs line-through">€ 40.00</div>
+         </div>
+
+         <Sizes client:load />
+
+         <Colors client:load />
+
+         <button
+            type="button"
+            class="bg-blue-700 hover:bg-blue-600 rounded-md p-2 w-full text-white"
+            >Add to cart</button
+         >
       </div>
-
-      <Sizes client:load />
-
-      <Colors client:load />
-
-      <button
-         type="button"
-         class="bg-blue-700 hover:bg-blue-600 rounded-md p-2 w-full text-white"
-         >Add to cart</button
-      >
    </div>
-</div>
+</Bg>
 
 <style>
    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
