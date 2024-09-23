@@ -29,9 +29,7 @@ const { id, title, article, primaryColor, palette } = Astro.props;
       <div class="h-fit w-full md:w-3/4 space-y-3">
          <H3 styles="text-center">My UI</H3>
 
-         <div class="h-full w-full flex items-center justify-center">
-            <slot />
-         </div>
+         <slot />
       </div>
 
       <!-- right -->
