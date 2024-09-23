@@ -7,10 +7,12 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import web from "./web.svg";
+
+import Bg from '~/components/bg.astro';
 ---
 
-<div
-   class="bg-green-500 bg-opacity-50 rounded-xl p-5 w-full flex justify-center"
+<Bg
+   twBgColor="bg-green-500"
 >
    <div
       class="bg bg-white rounded-3xl p-5 pt-7 w-80 flex flex-col gap-5 items-center"
@@ -50,7 +52,7 @@ import web from "./web.svg";
          >
       </div>
    </div>
-</div>
+</Bg>
 
 <style>
    .bg {
