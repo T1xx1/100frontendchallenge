@@ -9,7 +9,10 @@ export default {
          colors: {
             primary: '#0000ff',
             accent: '#ff8000'
-         }
+         },
+         spacing: {
+            100: "25rem"
+         },
       },
    },
    plugins: [],
