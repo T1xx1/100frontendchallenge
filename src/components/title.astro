@@ -1,1 +1,17 @@
-<h1 class="text-primary text-center text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
+---
+import { Image } from 'astro:assets';
+
+import icon from '~/assets/icon.png';
+
+type Props = {
+   styles?: string;
+};
+
+const { styles = "" } = Astro.props;
+---
+
+<div class={`flex gap-2.5 items-center ${styles}`}>
+   <Image src={icon} alt="Icon" class="h-9 w-9" />
+
+   <div class="text-primary text-3xl font-semibold">100FrontendChallenge</div>
+</div>
