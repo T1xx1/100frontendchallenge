@@ -19,11 +19,11 @@
             <img
                src={shirt}
                alt="Shirt"
-               class={`rounded-md h-16 w-14 object-cover ${shirt === selected && 'outline outline-[3.5px] outline-blue-700'}`}
+               class={`rounded-md h-20 w-16 object-cover ${shirt === selected && 'outline outline-[3.5px] outline-blue-700'}`}
             />
          </button>
       {/each}
    </div>
 
-   <img src={selected} alt="Shirt" class="rounded-lg h-96 w-72 object-cover" />
+   <img src={selected} alt="Shirt" class="rounded-lg h-100 w-80 object-cover" />
 </div>

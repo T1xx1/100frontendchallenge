@@ -16,7 +16,7 @@
    };
 </script>
 
-<div class="mt-4 space-y-2">
+<div class="mt-5 space-y-2">
    <div class="font-semibold">Choose color</div>
 
    <div class="flex gap-2.5 items-center">
