@@ -14,15 +14,15 @@ type Props = {
    id: string;
    title: string;
    article: string;
-   primaryColor: string;
-   palette: string[];
+   twPrimaryColor: string;
+   twPalette: string[];
 };
 
-const { id, title, article, primaryColor, palette } = Astro.props;
+const { id, title, article, twPrimaryColor, twPalette } = Astro.props;
 ---
 
 <Base styles="space-y-3">
-   <H2 styles={`text-center ${primaryColor}`}>{title}</H2>
+   <H2 styles={`text-center ${twPrimaryColor}`}>{title}</H2>
 
    <div class="flex flex-col md:flex-row gap-3">
       <!-- component -->
@@ -64,8 +64,8 @@ const { id, title, article, primaryColor, palette } = Astro.props;
             <H3 styles="text-center">Colors palette</H3>
 
             <div class="flex gap-2.5 justify-center">
-               {palette.map(color => (
-                  <button type="button" class="rounded-lg h-14 w-14 group" style={`background-color: #${color}`}>
+               {twPalette.map(twBgColor => (
+                  <button type="button" class={`rounded-lg h-14 w-14 group ${twBgColor}`}> 
                      <Image src={copy} alt="Copy" class="hidden group-hover:block m-auto h-4 w-4" />
                   </button>
                ))}
