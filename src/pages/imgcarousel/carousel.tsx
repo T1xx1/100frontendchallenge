@@ -38,19 +38,19 @@ export default function Carousel() {
    return <div className='space-y-3'>
       <div className='w-full flex gap-3 items-center'>
          <button type='button' onClick={() => scroll(-1)}>
-            <img src={left.src} alt='Previous' className='hover:bg-gray-700 bg-opacity-50 rounded-md p-1 h-8 w-8' />
+            <img src={left.src} alt='Previous' className='hover:bg-gray-700 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
          </button>
 
-         <img src={imgs[index].src} alt='Image' className='rounded-lg aspect-video h-72 object-cover' />
+         <img src={imgs[index].src} alt='Image' className='rounded-xl aspect-video h-80 object-cover' />
 
          <button type='button' onClick={() => scroll(+1)}>
-            <img src={right.src} alt='Next' className='hover:bg-gray-700 bg-opacity-50 rounded-md p-1 h-8 w-8' />
+            <img src={right.src} alt='Next' className='hover:bg-gray-700 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
          </button>
       </div>
 
       <div className='flex gap-3 justify-center'>
          {imgs.map((img, i) => (
-            <button type='button' key={i} onClick={() => setIndex(i)}>
+            <button type='button' onClick={() => setIndex(i)} key={i}>
                <img src={img.src} alt='Img' className={`rounded-lg h-16 w-16 object-cover ${i === index && 'outline outline-white'}`} />
             </button>
          ))}
