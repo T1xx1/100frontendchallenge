@@ -35,16 +35,16 @@ export default function Carousel() {
       }
    };
 
-   return <div className='space-y-3'>
+   return <div className='bg-[#00000010] rounded-xl p-3 space-y-3 backdrop-blur'>
       <div className='w-full flex gap-3 items-center'>
          <button type='button' onClick={() => scroll(-1)}>
-            <img src={left.src} alt='Previous' className='hover:bg-gray-700 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
+            <img src={left.src} alt='Previous' className='hover:bg-gray-300 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
          </button>
 
          <img src={imgs[index].src} alt='Image' className='rounded-xl aspect-video h-80 object-cover' />
 
          <button type='button' onClick={() => scroll(+1)}>
-            <img src={right.src} alt='Next' className='hover:bg-gray-700 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
+            <img src={right.src} alt='Next' className='hover:bg-gray-300 hover:bg-opacity-50 rounded-md p-2 h-9 w-9' />
          </button>
       </div>
 
