@@ -1,0 +1,11 @@
+---
+type Props = {
+   twBgColor: string;
+};
+
+const { twBgColor } = Astro.props;
+---
+
+<div class={`bg-opacity-50 rounded-xl p-5 h-full w-full flex items-center justify-center ${twBgColor}`}>
+   <slot />
+</div>

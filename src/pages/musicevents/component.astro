@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+
+import location from "./location.svg";
+import ticket from "./ticket.svg";
+---
+
+<div class="bg rounded-xl px-10 py-10 space-y-5">
+   <div class="space-y-1">
+      <h2 class="text-3xl font-bold">Music events</h2>
+
+      <div class="flex gap-1 items-center">
+         <Image src={location} alt="Location" class="h-4 w-4" />
+
+         <div class="text-sm font-medium">Milan, Italy</div>
+      </div>
+   </div>
+
+   <div class="space-y-3">
+      <div class="bg-white rounded-xl p-2.5 pr-5 flex gap-3.5 items-center">
+         <div
+            class="bg-violet-200 rounded-lg p-1.5 w-28 text-center font-semibold"
+         >
+            <div class="text-sm">14 september</div>
+            <div class="text-lg">20:00</div>
+         </div>
+
+         <div>
+            <div class="text-lg font-semibold">Eras of Enchantment Tour</div>
+            <div>
+               A magical journey through the different musical eras...
+            </div>
+         </div>
+
+         <a
+            href="https://open.spotify.com/intl-it/track/1BxfuPKGuaTgP7aM0Bbdwr?si=ef3809fc7e1e4339"
+            class="bg-black rounded-lg ml-auto px-4 py-2.5 flex gap-2 items-center text-white"
+         >
+            <Image src={ticket} alt="Ticket" class="h-5 w-5" />
+
+            <div>Buy your ticket</div>
+         </a>
+      </div>
+
+      <div class="bg-white rounded-xl p-2.5 pr-5 flex gap-3.5 items-center">
+         <div
+            class="bg-pink-200 rounded-lg p-1.5 w-28 text-center font-semibold"
+         >
+            <div class="text-sm">25 october</div>
+            <div class="text-lg">21:00</div>
+         </div>
+
+         <div>
+            <div class="text-lg font-semibold">Queen of the Jungle Live</div>
+            <div>
+               A unique visual and auditory experience, featuring her...
+            </div>
+         </div>
+
+         <a
+            href="https://open.spotify.com/intl-it/track/1BxfuPKGuaTgP7aM0Bbdwr?si=ef3809fc7e1e4339"
+            class="bg-black rounded-lg ml-auto px-4 py-2.5 flex gap-2 items-center text-white"
+         >
+            <Image src={ticket} alt="Ticket" class="h-5 w-5" />
+
+            <div>Buy your ticket</div>
+         </a>
+      </div>
+
+      <div class="bg-white rounded-xl p-2.5 pr-5 flex gap-3.5 items-center">
+         <div
+            class="bg-sky-200 rounded-lg p-1.5 w-28 text-center font-semibold"
+         >
+            <div class="text-sm">10 november</div>
+            <div class="text-lg">19:30</div>
+         </div>
+
+         <div>
+            <div class="font-semibold">Good as Hell Tour</div>
+            <div class="text-xs">
+               Lizzo returns to Italy with her tour celebrating...
+            </div>
+         </div>
+
+         <a
+            href="https://open.spotify.com/intl-it/track/1BxfuPKGuaTgP7aM0Bbdwr?si=ef3809fc7e1e4339"
+            class="bg-black rounded-lg ml-auto px-4 py-2.5 flex gap-2 items-center text-white"
+         >
+            <Image src={ticket} alt="Ticket" class="h-5 w-5" />
+
+            <div>Buy your ticket</div>
+         </a>
+      </div>
+
+      <div class="bg-white rounded-xl p-2.5 pr-5 flex gap-3.5 items-center">
+         <div
+            class="bg-emerald-200 rounded-lg p-1.5 w-28 text-center font-semibold"
+         >
+            <div class="text-sm">3 december</div>
+            <div class="text-lg">20:30</div>
+         </div>
+
+         <div>
+            <div class="text-semibold">Loud and Proud Tour</div>
+            <div class="text-xs">
+               Måneskin will set the stage on fire with their disruptive...
+            </div>
+         </div>
+
+         <a
+            href="https://open.spotify.com/intl-it/track/1BxfuPKGuaTgP7aM0Bbdwr?si=ef3809fc7e1e4339"
+            class="bg-black rounded-lg ml-auto px-4 py-2.5 flex gap-2 items-center text-white"
+         >
+            <Image src={ticket} alt="Ticket" class="h-5 w-5" />
+
+            <div>Buy your ticket</div>
+         </a>
+      </div>
+   </div>
+</div>
+
+<style>
+   .bg {
+      background: url("./bg.jpg");
+      background-size: cover;
+   }
+</style>

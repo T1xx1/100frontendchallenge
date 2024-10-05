@@ -1,0 +1,23 @@
+---
+import Card from './card.astro';
+import H2 from './h2.astro';
+
+const { val } = Astro.props;
+---
+
+<Card styles="m-auto px-5 py-2 w-fit flex flex-col items-center">
+   <H2 styles="text-accent">UIs counter</H2>
+
+   <div class="text-accent font-semibold">{val} / 100</div>
+
+   <meter
+      max="100"
+      value={val}
+      class="h-10 w-[25rem]"></meter>
+</Card>
+
+<style>
+   meter::-webkit-meter-optimum-value {
+      @apply bg-accent;
+   }
+</style>
