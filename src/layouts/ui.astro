@@ -63,7 +63,7 @@ const { id, title, article, twPrimaryColor, twPalette } = Astro.props;
          <div class="space-y-4">
             <H3 styles="text-center">Colors palette</H3>
 
-            <div class="flex gap-2.5 justify-center">
+            <div class="flex flex-wrap gap-2.5 justify-center">
                {twPalette.map(twBgColor => (
                   <button type="button" class={`rounded-lg h-14 w-14 group ${twBgColor}`}> 
                      <Image src={copy} alt="Copy" class="hidden group-hover:block m-auto h-4 w-4" />
