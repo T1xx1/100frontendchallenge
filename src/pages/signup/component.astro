@@ -2,11 +2,11 @@
 import { Image } from "astro:assets";
 
 import google from "./google.svg";
+
+import Bg from '~/components/bg.astro';
 ---
 
-<div
-   class="bg-gray-300 bg-opacity-50 rounded-xl p-7 flex justify-center"
->
+<Bg twBgColor="bg-gray-300">
    <div
       class="bg-white bg-opacity-50 rounded-2xl p-5 w-80 space-y-3 shadow-lg"
    >
@@ -63,4 +63,4 @@ import google from "./google.svg";
          <a href="" class="text-blue-700 hover:underline font-semibold">Login</a>
       </div>
    </div>
-</div>
+</Bg>

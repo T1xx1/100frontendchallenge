@@ -4,11 +4,11 @@ import { Image } from 'astro:assets';
 import cover from './cover.jpg';
 import hearth from './hearth.svg';
 import star from './star.svg';
+
+import Bg from '~/components/bg.astro';
 ---
 
-<div
-   class="bg-yellow-700 bg-opacity-50 rounded-xl py-10 flex justify-center"
->
+<Bg twBgColor="bg-yellow-700">
    <div class="bg-white rounded-xl w-80 space-y-5">
       <Image src={cover} alt="Cover" class="rounded-t-xl" />
 
@@ -40,4 +40,4 @@ import star from './star.svg';
 
       <button type="button" class="bg-black hover:bg-opacity-80 rounded-b-xl py-3 w-full text-white text-sm font-semibold">Make a reservation</button>
    </div>
-</div>
+</Bg>

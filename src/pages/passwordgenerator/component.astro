@@ -6,11 +6,11 @@ import reload from './reload.svg';
 
 import { Slider } from './slider';
 import { Switch } from './switch';
+
+import Bg from '~/components/bg.astro';
 ---
 
-<div
-   class="bg-violet-300 rounded-xl p-6 w-full flex justify-center"
->
+<Bg twBgColor="bg-violet-300">
    <div class="bg-black rounded-3xl p-5 w-80 space-y-5 text-white text-sm shadow">
       <h2 class='py-1 text-2xl text-center font-medium'>Password generator</h2>
 
@@ -64,4 +64,4 @@ import { Switch } from './switch';
 
       <button type="button" class='bg-violet-500 hover:bg-violet-400 rounded-lg py-2 w-full text-white font-medium'>Generate</button>
    </div>
-</div>
+</Bg>
