@@ -1,65 +1,47 @@
 ---
-import { getCollection } from "astro:content";
+import uis from "~/content/uis.json";
 
 import Base from "~/layouts/base.astro";
 
-const componentsCollection = await getCollection("data");
+import Card from '~/components/card.astro';
+import Counter from '~/components/counter.astro';
+import H2 from '~/components/h2.astro';
+import H3 from '~/components/h3.astro';
+import Link from '~/components/link.astro';
+import Title from '~/components/title.astro';
 ---
 
 <Base styles="flex flex-col space-y-5">
-   <div class="text-primary text-center">
-      <h1 class="text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
+   <a href="./100fc">
+      <h1 class="text-primary text-center text-6xl md:text-7xl font-semibold">100FrontendChallenge</h1>
+   </a>
 
-      <div>100 UIs one per day</div>
-   </div>
-
-   <div class="text-center">
-      <a
-         href="https://dev.to/bigsondev/100-free-frontend-challenges-3f0"
-         class="link">Challenge's inspo</a
-      >
-   </div>
+   <Counter val={uis.length} />
 
    <div class="space-y-5">
-      <h2 class="h2 text-center">Challenges</h2>
+      <H2 styles="text-center">UIs</H2>
 
-      <div class="card px-3 py-2 m-auto w-fit flex flex-col items-center">
-         <div class="font-semibold">{componentsCollection.length} / 100</div>
-
-         <meter
-            max="100"
-            value={componentsCollection.length}
-            class="h-10 w-[25rem]"></meter>
-      </div>
-
-      <div class="flex flex-wrap gap-5 justify-center">
+      <!-- uis -->
+      <div class="flex flex-wrap gap-4 justify-center">
          {
-            componentsCollection.map(async (componentEntry) => {
+            uis.map(async (uiEntry) => {
                const Component = (
                   await import(
-                     `../content/components/${componentEntry.id}/index.astro`
+                     `./${uiEntry.id}/component.astro`
                   )
                ).default;
 
                return (
-                  <div class="card pt-3 w-full md:w-[49%] space-y-3">
-                     <h3 class="h3 text-center">
-                        <a href={`./${componentEntry.id}`} class="link">
-                           {componentEntry.data.title}
-                        </a>
-                     </h3>
+                  <Card styles="pt-3 h-fit w-full md:w-[49%] space-y-3">
+                     <H3 styles="text-center">
+                        <Link url={`./${uiEntry.id}`}>{uiEntry.title}</Link>
+                     </H3>
 
                      <Component />
-                  </div>
+                  </Card>
                );
             })
          }
       </div>
    </div>
-
-   <style lang="scss">
-      meter::-webkit-meter-optimum-value {
-         @apply bg-accent;
-      }
-   </style>
 </Base>

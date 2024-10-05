@@ -1,0 +1,50 @@
+[
+   {
+      "id": "profilecard",
+      "title": "Profile card"
+   },
+   {
+      "id": "addtocart",
+      "title": "Add to cart"
+   },
+   {
+      "id": "mobilenavigation",
+      "title": "Mobile navigation"
+   },
+   {
+      "id": "contactus",
+      "title": "Contact us"
+   },
+   {
+      "id": "recipe",
+      "title": "Recipe"
+   },
+   {
+      "id": "imgcarousel",
+      "title": "Image carousel"
+   },
+   {
+      "id": "createaccount",
+      "title": "Create account"
+   },
+   {
+      "id": "musicevents",
+      "title": "Music events"
+   },
+   {
+      "id": "passwordgenerator",
+      "title": "Password generator"
+   },
+   {
+      "id": "signup",
+      "title": "Signup"
+   },
+   {
+      "id": "hotelbooking",
+      "title": "Hotel booking"
+   },
+   {
+      "id": "restaurantreservation",
+      "title": "Restaurant reservation"
+   }
+]
